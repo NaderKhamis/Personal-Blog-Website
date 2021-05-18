@@ -1,11 +1,9 @@
 /* *IMPORTS-FILES */
-
+@import "header.css";
 @import "blog-post.css";
-
+@import "footer.css";
 /* *IMPORTS-FILES */
-
 /* *START-GLOBAL */
-
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -14,22 +12,17 @@
     --secondary-color: #34656d;
     --third-color: #c6ffc1;
 }
-
 body {
     background-color: #fffbdf;
     font-family: sans-serif;
     text-transform: capitalize
 }
-
-
 /* *END-GLOBAL */
-
-
 /* *START-FRAMEWORK */
-
 .btn {
     width: 200px;
     height: 40px;
+    display: block;
     margin-bottom: 20px;
     background-color: transparent;
     border: 2px solid var(--secondary-color);
@@ -41,155 +34,101 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
 }
-
-
+.container{
+    width: 80%;
+    margin: auto;
+}
 /* *END-FRAMEWORK */
-
-
-/* *START-HEADER */
-
-header {
-    height: 50px;
-    background-color: var(--primary-color);
-    color: var(--third-color);
-    grid-area: header;
-    line-height: 50px;
-    padding: 0px 90px;
-}
-
-@media(max-width: 320px){
-    header{
-        text-align: center;
-    }
-}
-
-@media(min-width: 600px) and (max-width: 900px){
-    header{
-        text-align: center;
-    }
-}
-/* *END-HEADER */
-
-
-/* *START-MAIN */
-
-main{
+/* *START-HOME */
+#home{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    grid-template-areas:"side article article article"
-}
-
-@media(max-width: 320px){
-    main{
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 100px 1fr;
-        gap: 20px;
-        grid-template-areas:
-                            "side side side side"
-                            "article article article article"
-    }
-}
-
-@media(min-width: 600px) and (max-width: 900px){
-    main {
-        gap: 5px;
-    }
-}
-
-/* *START-SIDEBAR */
-
-main aside {
-    grid-area: side;
+    grid-template-areas:"side article article article";
     padding: 20px 0px;
+}
+@media(max-width: 767px){
+    #home{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                            "side"
+                            "article";
+        gap: 0PX;
+    }
+}
+@media(min-width: 768px) and (max-width:991px){
+    #home{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:"side article";
+        gap: 0PX;
+    }
+}
+/* *START-SIDEBAR */
+#home aside {
+    grid-area: side;
     text-align: center;
 }
-
-@media(min-width: 600px) and (max-width: 900px){
-    main aside{
-        margin-left: 10px;
+@media(max-width: 767px){
+    #home aside .btn{
+        margin: auto;
+        margin-bottom: 20px;
     }
 }
-
-main aside button.btn-primary{
+#home aside button.btn-primary{
     background-color: var(--primary-color);
     color: var(--third-color);
 }
-
-main aside button.btn-secondary{
+#home aside button.btn-secondary{
     color: var(--primary-color);
 }
-
-main aside button.btn-secondary:hover{
+#home aside button.btn-secondary:hover{
     background-color: var(--primary-color);
     color: var(--third-color);
 }
-
 /* *END-SIDEBAR */
-
-
 /* *START-ARTICLES-CONTAINER */
-
-main #content {
+#home #content {
     grid-area: article;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
-    gap: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-
-@media(max-width: 320px){
-    main #content{
-        grid-template-columns: 300px;
-        grid-template-rows: repeat(4,1fr);
-        gap: 20px;
-        padding: 10px;
+@media(max-width: 991px){
+    #home #content{
+        display: block;
+        padding: 0px 10px;
     }
 }
-
-@media(min-width: 600px) and (max-width: 900px){
-    main #content{
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4,1fr);
-        gap: 20px;
-        padding: 10px;
-    }
-}
-
-@media(min-width:901px){
-    main #content{
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(2,1fr);
-        gap: 16px;
-        padding: 20px 90px 20px 0px;
-    }
-}
-
-main #content div{
-    padding: 15px;
+#home #content div{
+    width: calc(50% - 30px);
+    padding: 10px;
     background-color: var(--primary-color);
     color: white;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
 }
-
-@media(max-width: 599px){
-    main #content div{
-        height: 355px;
+#home #content div:first-of-type,
+div:nth-child(2){
+    margin-bottom: 20px;
+}
+@media(max-width: 767px){
+    #home #content div{
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 20px;
     }
 }
-
-@media(min-width: 600px) and (max-width: 900px){
-    main #content div{
-        height: 315px;
-        margin: auto;
+@media(min-width: 767px) and (max-width:991px){
+    #home #content div{
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 20px;
     }
 }
-
-main #content div article figure img{
+#home #content div article figure img{
     height: 120px;
     margin: 5px 0px;
     border-radius: 10px;
@@ -198,50 +137,19 @@ main #content div article figure img{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-
-@media(max-width: 599px){
-    main #content div article figure img{
-        width: 260px;
-    }
-}
-
-@media(min-width: 600px) and (max-width: 900px){
-    main #content div article figure img{
-        width: 300px;
-    }
-}
-
-main #content div article figure figcaption{
+#home #content div article figure p{
+    display: block;
     margin-bottom: 5px;
 }
-
-main #content div article a{
+#home #content div article figure figcaption{
+    margin-bottom: 5px;
+}
+#home #content div article a{
     color: var(--third-color);
     text-decoration: none;
 }
-
-main #content div article a:hover{
+#home #content div article a:hover{
     text-decoration: underline;
 }
-
 /* *END-ARTICLES-CONTAINER */
-
-
 /* *END-MAIN */
-
-
-/* *START-FOOTER */
-
-footer {
-    background-color: var(--primary-color);
-    color: var(--third-color);
-    grid-area: footer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    line-height: 50px;
-}
-
-
-/* *END-FOOTER */
-

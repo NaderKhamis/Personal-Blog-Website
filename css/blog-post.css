@@ -1,95 +1,117 @@
-section {
+/* *START-POST */
+#post{
     display: grid;
-    grid-template-columns: repeat(8, auto);
-    grid-template-areas: "nav main main main main bio bio bio";
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    grid-template-areas:"article article article bio";
+    padding: 20px 0px;
 }
-
-nav{
-    grid-area: nav;
+@media(max-width: 767px){
+    #post{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                            "article"
+                            "bio";
+    }
 }
-
-/* blog content */
-article {
-    grid-area: main;
+@media(min-width: 767px) and (max-width:991px){
+    #post{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:"article article bio";
+    }
 }
-
-.blog-post {
+/* *START-NAV */
+nav.container{
+    margin-top: 20px;
+}
+nav a{
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+}
+/* *START-NAV */
+/* *START-ARTICLE */
+#post article{
+    padding: 1.5rem;
+    grid-area: article;
+    background: white;
+    box-shadow: 2px 2px 3px grey;
+}
+#post article .blog-post {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: white;
-    box-shadow: 2px 2px 6px grey;
 }
-
-.blog-post-img {
+#post article .blog-post .blog-post-img {
+    margin: 20px 0px;
     width: 80%;
 }
-
-.blog-intro {
-    font-weight: bold;
-    font-size: 1.1em;
+#post article .blog-post p{
+    line-height: 1.5rem;
 }
-
-blockquote {
-    border-left: 2px solid #66d7d1;
-    padding: 0.5rem;
-    font-size: 1.1em;
+#post article q {
+    display: block;
+    padding: 20px;
+    font-size: 14px;
+    border-left: 5px solid var(--third-color);
 }
-
-/* bio section */
-#bio {
-    grid-area: bio;
+#post article a {
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+#post article a:hover {
+    text-decoration: underline;
+}
+/* *END-ARTICLE */
+/* *START-BIO */
+#post #bio{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    grid-area: bio;
 }
-
-.bio-image-container {
-    display: flex;
-    justify-content: center;
-    margin: auto 0;
+@media (min-width:450px) and (max-width:767px) {
+    #post #bio{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    #post #bio .bio-image{
+        width: calc(50% - 10px);
+        margin-right: 20px;
+    }
+    #post #bio .bio-image img{
+        width: 100%;
+    }
+    #post #bio .bio-description{
+        width: calc(50% - 10px);
+    }
+    #post #bio .bio-description p{
+        line-height: 2rem;
+    }
+}
+#post #bio .bio-image img{
     max-width: 100%;
 }
-
-footer{
-    grid-area: ft;
+#post #bio .bio-description{
+    line-height: 1.5rem;
 }
-
-/* responsive layout */
-@media(min-width: 900px) {
-
-    
-    /* content */
-    .blog-post {
-        margin: 1rem;
-        padding: 2rem;
-    }
-
-    blockquote {
-        padding: 1rem;
-        font-size: 1.2em;
-    }
-
-
-    /* bio section */
-    #bio {
-        justify-content: flex-start;
-        margin-top: 1rem;
-    }
-
-    #bio-icon {
-        max-width: 70%;
-    }
-
-    .bio-image-container {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        max-width: 100%;
-
-    }
-
-    .bio-description {
-        max-width: 100%;
+#post #bio .bio-description .bio-header{
+    padding: 10px;
+    text-align: center;
+}
+#post #bio .bio-description .bio-social {
+    margin-top: 10px;
+}
+#post #bio .bio-description .bio-social a {
+    text-decoration: none;
+}
+#post #bio .bio-description .bio-social a img{
+    max-width: 15%;
+}
+@media (max-width:767px) {
+    #post #bio .bio-description .bio-social a img{
+        max-width: 10%;
     }
 }
+/* *END-BIO */
+/* *END-POST */

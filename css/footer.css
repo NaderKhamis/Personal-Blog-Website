@@ -1,0 +1,12 @@
+/* *START-FOOTER */
+footer {
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    grid-area: footer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* *END-FOOTER */

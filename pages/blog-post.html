@@ -1,49 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/main.css">
-        <title>Article 1</title>
-    </head>
-    <body>
-        <div class="blog-container">
-            <header>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Article 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
+</head>
+
+<body>
+        <header>
+            <div class="container">
                 <h1 class="header-title">Blog</h1>
-            </header>
-            <section>
-                <nav>
-                    <a href="../index.html" class="nav-link">Home</a>
-                </nav>
+            </div>
+        </header>
+        <nav class="container">
+            <a href="../index.html" class="nav-link">Home</a>
+        </nav>
+            <main id="post" class="container">
                 <article>
                     <div class="blog-post">
                         <h2>Ut aliquam sollicitudin leo</h2>
-                        <h3 class="blog-date">May 17, 2021</h3>
-                        <img src="../images/image1.jpg" alt="Neon" class="blog-post-img">
-                        <p class="blog-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+                        <h3>May 17, 2021</h3>
+                        <img src="../images/image1.jpg" alt="image 1" class="blog-post-img">
+                        <p>
+                            <u>
+                                <strong>Lorem</strong> ipsum dolor sit amet, consectetuer adipiscing elit.
+                            </u> 
+                            Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+                        </p>
                         <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-                        <blockquote>
-                            Nullam malesuada erat ut turpis. Suspendisse urna nibh
-                        </blockquote>
-                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. <a href="#">Vestibulum volutpat</a>, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
-                        <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu,vulputate vel, nisl.</p>
+                        <strong>
+                            <q>
+                                Nullam malesuada erat ut turpis. Suspendisse urna nibh
+                            </q>
+                        </strong>
                     </div>
+                    <a href="#">Reade more ></a>
                 </article>
-                <div id="bio">
-                    <div class="box bio-image-container">
+                <aside id="bio">
+                    <div class="bio-image">
                         <img src="../images/nader.png" alt="nader" id="bio-icon">
                     </div>
-                    <div class="box bio-description">
+                    <div class="bio-description">
                         <h3 class="bio-header">Author</h3>
-                        <h4 class="blog-date">Nader Khamis, freelance web designer</h4>
+                        <h4>Nader Khamis, <br><u>freelance web designer</u></h4>
                         <p>Nader Khamis is a freelance web designer from The Egypt currently living in KSA. he loves design, coding and telling stories and is working on improving his programming skills to land his next job.</p>
+                        <div class="bio-social">
+                            <a href="https://www.facebook.com/NaderKhamisFb" target="_blank">
+                                <img src="../images/social1.png" alt="facebook">
+                            </a>
+                            <a href="https://www.linkedin.com/in/naderkhamisin/" target="_blank">
+                                <img src="../images/social2.png" alt="linked-in">
+                            </a>
+                            <a href="https://twitter.com/NaderKhamisTw" target="_blank">
+                                <img src="../images/social3.png" alt="twitter">
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <footer>
-                copyright 2021
-            </footer>
-        </div>
+                    
+                    </aside>
+            </main>
+        <footer>
+            copyright 2021
+        </footer>
     </body>
 </html>
